@@ -9,9 +9,9 @@ import path from 'path';
 const API_URL = 'http://localhost:5207/api';
 const checks = [];
 
-function log(message) {
+function log(type, message) {
 
-  console.log(`${message}`);
+  console.log(`[${type}] ${message}`);
 }
 
 async function checkBackendRunning() {
