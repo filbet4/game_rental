@@ -1,4 +1,17 @@
-.env
+echo ".env
 deploy.bat
 deploy.sh
-*.md
+
+__pycache__/
+*.pyc
+*.py[cod]
+*.sqlite3
+.venv/
+venv/
+
+node_modules/
+frontend/node_modules/
+
+*.log
+" > .gitignore
+
