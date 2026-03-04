@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Rentals - Game Rental System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <h1>🎮 Game Rental System</h1>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="myrentals.html">My Rentals</a>
+        <a id="adminLink" href="admin.html" style="display: none;">Admin</a>
+        <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>My Rentals</h2>
+    <div id="message" class="message"></div>
+    <div id="rentalsContainer" class="rentals-grid"></div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Game Rental System. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Check authentication
+    document.addEventListener('DOMContentLoaded', () => {
+      const token = localStorage.getItem('token');
+      const role = localStorage.getItem('user_role');
+      const adminLink = document.getElementById('adminLink');
+      const logoutBtn = document.getElementById('logoutBtn');
+
+      if (!token) {
+        window.location.href = 'login.html';
+        return;
+      }
+
+      if (role === 'ADMIN') {
+        adminLink.style.display = 'block';
+      }
+
+      logoutBtn.addEventListener('click', () => {
+        localStorage.clear();
+        window.location.href = 'index.html';
+      });
+    });
+  </script>
+
+  <script type="module" src="js/rentals.js"></script>
+</body>
+</html>

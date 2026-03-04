@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Game Rental System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <h1>🎮 Game Rental System</h1>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="auth-form">
+      <h1 id="formTitle">Register</h1>
+      <form id="authForm">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required>
+        </div>
+        <button type="button" id="submitBtn" class="btn btn-primary btn-block">Register</button>
+        <div id="message" class="message"></div>
+      </form>
+      <div id="loginLink" style="display: none; text-align: center; margin-top: 20px;">
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+      </div>
+      <div id="registerLink" style="display: none; text-align: center; margin-top: 20px;">
+        <p>Don't have an account? <a href="register.html">Register here</a></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Game Rental System. All rights reserved.</p>
+  </footer>
+
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>
